@@ -1,0 +1,310 @@
+/* ==========================================================================
+   LAYOUT - CyberVirus Lab & Git Audit System
+   ========================================================================== */
+
+/* HEADER & NAVBAR */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background-color: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+[data-theme="light"] .site-header {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.brand-icon {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 10px var(--color-primary-glow));
+}
+
+.brand-name {
+    color: var(--text-primary);
+}
+
+.brand-highlight {
+    color: var(--color-primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+    color: var(--color-primary);
+    background-color: var(--color-primary-glow);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.theme-toggle-btn {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--color-primary);
+    transform: rotate(15deg);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* MAIN CONTENT */
+.main-wrapper {
+    flex: 1;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 24px 60px;
+}
+
+/* ==========================================================================
+   FOOTER (Contient le bouton obligatoire des Commandes Git Utilisées)
+   ========================================================================== */
+.site-footer {
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-color);
+    padding: 48px 24px 32px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* BANNIÈRE CENTRALE DU FOOTER AVEC LE BOUTON DÉDIÉ */
+.footer-cta-banner {
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(124, 77, 255, 0.12) 100%);
+    border: 1px solid var(--border-highlight);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    box-shadow: var(--shadow-md);
+}
+
+.footer-cta-text h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-cta-text p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 650px;
+}
+
+.btn-footer-git-tracker {
+    background: linear-gradient(135deg, #00e5ff 0%, #00e676 100%);
+    color: #050b14 !important;
+    font-size: 1.05rem;
+    font-weight: 800;
+    padding: 16px 28px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.btn-footer-git-tracker:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 0 35px rgba(0, 230, 118, 0.5);
+    color: #050b14 !important;
+}
+
+.btn-footer-git-tracker .git-icon {
+    font-size: 1.3rem;
+}
+
+/* FOOTER COLUMNS */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+.footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-col p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-nav-list a {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-nav-list a:hover {
+    color: var(--color-primary);
+    padding-left: 4px;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.repo-link-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.repo-link-badge:hover {
+    border-color: var(--color-primary);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-surface);
+        border-bottom: 1px solid var(--border-color);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 16px 24px;
+        display: none;
+        box-shadow: var(--shadow-lg);
+    }
+
+    .nav-links.nav-open {
+        display: flex;
+    }
+
+    .footer-cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-footer-git-tracker {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
