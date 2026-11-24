@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GIT TRACKER - Styles du Registre & Dashboard Git
+   GIT TRACKER - Styles du Registre & Console d'Audit Horodatée
    ========================================================================== */
 
 .git-tracker-container {
@@ -13,12 +13,19 @@
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    padding: 36px 32px;
+    padding: 32px;
 }
 
 .tracker-hero h2 {
     font-size: 2rem;
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tracker-hero h2 i {
+    color: var(--color-primary);
 }
 
 .hero-desc {
@@ -37,6 +44,47 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    color: var(--text-secondary);
+}
+
+.rule-callout i {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+}
+
+/* VUE SWITCHER TABS (Cartes d'Apprentissage vs Historique Chronologique) */
+.tracker-view-switcher {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.view-switch-btn {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-switch-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-highlight);
+}
+
+.view-switch-btn.active {
+    background-color: var(--color-primary-glow);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 /* STATS GRID */
@@ -65,7 +113,8 @@
 }
 
 .stat-icon {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    color: var(--text-muted);
 }
 
 .stat-value {
@@ -82,9 +131,9 @@
     font-weight: 600;
 }
 
-.stat-success .stat-value { color: var(--color-success); }
-.stat-warning .stat-value { color: var(--color-warning); }
-.stat-accent .stat-value { color: var(--color-primary); }
+.stat-success .stat-value, .stat-success .stat-icon { color: var(--color-success); }
+.stat-warning .stat-value, .stat-warning .stat-icon { color: var(--color-warning); }
+.stat-accent .stat-value, .stat-accent .stat-icon { color: var(--color-primary); }
 
 .progress-bar-container {
     width: 100%;
@@ -127,6 +176,11 @@
     min-width: 280px;
 }
 
+.search-box i {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
 .search-box input {
     background: transparent;
     border: none;
@@ -156,6 +210,9 @@
     font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 /* LISTE DES COMMANDES & CARTES */
@@ -263,6 +320,121 @@
     font-size: 0.82rem;
     color: var(--text-muted);
     font-family: var(--font-mono);
+}
+
+.card-footer-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ==========================================================================
+   CONSOLE D'HISTORIQUE CHRONOLOGIQUE RÉEL (HEURE PAR HEURE)
+   ========================================================================== */
+.history-terminal-container {
+    background-color: #070b12;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.history-terminal-header {
+    background-color: #0e1522;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.history-terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.history-terminal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.history-entry-row {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-family: var(--font-mono);
+    transition: var(--transition);
+}
+
+.history-entry-row:hover {
+    background-color: rgba(0, 229, 255, 0.05);
+    border-color: rgba(0, 229, 255, 0.2);
+}
+
+.history-entry-main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-cmd-line {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.history-cmd-line .prompt-symbol {
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.history-cmd-line code {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    background: transparent;
+    padding: 0;
+}
+
+.history-cmd-meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.history-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-executed {
+    background-color: rgba(0, 230, 118, 0.15);
+    color: var(--color-success);
+    border: 1px solid rgba(0, 230, 118, 0.3);
 }
 
 /* MODAL DETAILS */
