@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LAYOUT - CyberVirus Lab & Git Audit System
+   LAYOUT - CyberVirus Lab (Avec Boxicons & Passage Secret Discret)
    ========================================================================== */
 
 /* HEADER & NAVBAR */
@@ -7,14 +7,14 @@
     position: sticky;
     top: 0;
     z-index: 500;
-    background-color: rgba(10, 14, 23, 0.85);
+    background-color: rgba(10, 14, 23, 0.92);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     transition: var(--transition);
 }
 
 [data-theme="light"] .site-header {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .navbar {
@@ -29,7 +29,7 @@
 .brand-logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     font-size: 1.25rem;
     font-weight: 800;
     color: var(--text-primary);
@@ -38,7 +38,8 @@
 }
 
 .brand-icon {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    color: var(--color-primary);
     filter: drop-shadow(0 0 10px var(--color-primary-glow));
 }
 
@@ -53,7 +54,7 @@
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     list-style: none;
 }
 
@@ -64,6 +65,13 @@
     padding: 8px 14px;
     border-radius: var(--radius-md);
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-link i {
+    font-size: 1.1rem;
 }
 
 .nav-link:hover {
@@ -74,6 +82,7 @@
 .nav-link.active {
     color: var(--color-primary);
     background-color: var(--color-primary-glow);
+    border: 1px solid rgba(0, 229, 255, 0.25);
 }
 
 .header-actions {
@@ -88,21 +97,24 @@
     border-radius: var(--radius-md);
     padding: 8px 12px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-primary);
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme-toggle-btn:hover {
     border-color: var(--color-primary);
-    transform: rotate(15deg);
+    color: var(--color-primary);
 }
 
 .mobile-menu-btn {
     display: none;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--text-primary);
     cursor: pointer;
 }
@@ -117,12 +129,12 @@
 }
 
 /* ==========================================================================
-   FOOTER (Contient le bouton obligatoire des Commandes Git Utilisées)
+   FOOTER (Avec Passage Secret Discret pour le Registre Git)
    ========================================================================== */
 .site-footer {
     background-color: var(--bg-surface);
     border-top: 1px solid var(--border-color);
-    padding: 48px 24px 32px;
+    padding: 48px 24px 28px;
     margin-top: auto;
 }
 
@@ -134,72 +146,29 @@
     gap: 36px;
 }
 
-/* BANNIÈRE CENTRALE DU FOOTER AVEC LE BOUTON DÉDIÉ */
-.footer-cta-banner {
-    background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(124, 77, 255, 0.12) 100%);
-    border: 1px solid var(--border-highlight);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 24px;
-    box-shadow: var(--shadow-md);
-}
-
-.footer-cta-text h3 {
-    font-size: 1.4rem;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.footer-cta-text p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    max-width: 650px;
-}
-
-.btn-footer-git-tracker {
-    background: linear-gradient(135deg, #00e5ff 0%, #00e676 100%);
-    color: #050b14 !important;
-    font-size: 1.05rem;
-    font-weight: 800;
-    padding: 16px 28px;
-    border-radius: var(--radius-md);
-    box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
-    border: none;
-    cursor: pointer;
-    transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-}
-
-.btn-footer-git-tracker:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 0 35px rgba(0, 230, 118, 0.5);
-    color: #050b14 !important;
-}
-
-.btn-footer-git-tracker .git-icon {
-    font-size: 1.3rem;
-}
-
-/* FOOTER COLUMNS */
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 32px;
 }
 
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.footer-brand i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+}
+
 .footer-col h4 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 16px;
     color: var(--text-primary);
     text-transform: uppercase;
@@ -223,11 +192,23 @@
     color: var(--text-secondary);
     font-size: 0.9rem;
     transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .footer-nav-list a:hover {
     color: var(--color-primary);
-    padding-left: 4px;
+    transform: translateX(4px);
+}
+
+.branch-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 .footer-bottom {
@@ -242,6 +223,12 @@
     font-size: 0.85rem;
 }
 
+.footer-meta-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
 .repo-link-badge {
     display: inline-flex;
     align-items: center;
@@ -250,13 +237,61 @@
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-full);
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-family: var(--font-mono);
     font-size: 0.8rem;
+    transition: var(--transition);
 }
 
 .repo-link-badge:hover {
     border-color: var(--color-primary);
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   PASSAGE SECRET DISCRET (ICÔNE TERMINAL DE FOOTER)
+   ========================================================================== */
+.secret-git-portal {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0.65;
+}
+
+.secret-git-portal:hover {
+    opacity: 1;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-glow);
+    transform: scale(1.08);
+    box-shadow: 0 0 15px var(--color-primary-glow);
+}
+
+.secret-pulse-dot {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-success);
+    box-shadow: 0 0 8px var(--color-success);
+    animation: secretBlink 2.5s infinite;
+}
+
+@keyframes secretBlink {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
 /* RESPONSIVE DESIGN */
@@ -287,16 +322,6 @@
 
     .nav-links.nav-open {
         display: flex;
-    }
-
-    .footer-cta-banner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .btn-footer-git-tracker {
-        width: 100%;
-        justify-content: center;
     }
 
     .footer-grid {
